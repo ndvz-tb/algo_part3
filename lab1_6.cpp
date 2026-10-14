@@ -8,8 +8,8 @@
 
 // Варіант 2 (для варіанта 17 у списку групи):
 // Рядок STR4 з двома заданими словами: Прізвище та ім'я студента
-#define STR4 "Petrenko Taras"
-#define STR4_FIRST "Petrenko"
+#define STR4 "Nedoviz Taras"
+#define STR4_FIRST "Nedoviz"
 
 int main()
 {
