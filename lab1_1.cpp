@@ -1,36 +1,18 @@
 #include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
 
-int main()
-{
-    puts("My first program"); // Виведення вітального повідомлення
+int main() {
+    int a1 = 3, a2 = 8, b1, b2, b3;
+    a2 -= a1; // a2=8-3=5
+    b1 = a1 + 2 * a2 * a2; // b1=3+2*25=3+50=53
+    b2 = !a1; // b2=!3 ? 0
+    printf("b2=%d\n", b2);
+    b3 = b2++; // b3=0, b2=0+1=1
+    printf("a1=%d a2=%d b1=%d b2=%d b3=%d\n", a1, a2, b1, b2, b3);
 
-    // Доповнення до програми:
-    // 1. Виведення прізвища студента
-    puts("Nedoviz");
+    float f1 = 1.5, f2 = 1.5, r1, r2;
+    r1 = f1 * f1 + 2 * f2; // r1=2.25+3=5.25
+    r2 = (f1 != f2) ? f1 - 0.3 : f2 + 0.4; // r2=(1.5!=1.5)? ні 1.5+0.4=1.9
+    printf("r1=%5.2f r2=%5.2f\n", r1, r2);
 
-    // 2. Виведення першої букви імені з кодами ASCII у різних системах числення
-    char s = 'T'; // Перша буква імені (наприклад, Тарас)
-    printf("Symbol %c = (%d)10S = (%#o)8S ", s, s, s);
-    printf("= (%#x)16S size char=%d bait\n", s, (int)sizeof(s));
-
-    int a = 78; // Визначення цілої змінної
-    printf("a=%d size int=%d bait\n", a, (int)sizeof(a));
-
-    float b = 56.23f; // Визначення дійсної змінної
-    printf("b=%f=%e size float=%d bait\n", b, b, (int)sizeof(b));
-
-    // 3. Визначення нових змінних типів short, long, double
-    short sh = -1234;
-    long lg = 987654321L;
-    double db = 3.141592653589793;
-
-    printf("sh=%d size short=%d bait\n", sh, (int)sizeof(sh));
-    printf("lg=%ld size long=%d bait\n", lg, (int)sizeof(lg));
-    printf("db=%lf size double=%d bait\n", db, (int)sizeof(db));
-
-    puts("\nPress any key and Enter...\n");
-    getchar();
     return 0;
 }
