@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <windows.h>
 
 int main(void)
 {
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+
     // Масив з 3-х покажчиків на рядки
     // Завдання 2: назви країни, міста та вулиці
     const char *strings[] = {

@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 int main(void)
 {
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+
     int n, i;
     float *ptr = NULL;
 

@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
 
 #define ROWS 3
 #define COLS 6
 
 int main(void)
 {
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+
     int arr[ROWS][COLS];
     int count_row[ROWS];
     int total_count = 0;

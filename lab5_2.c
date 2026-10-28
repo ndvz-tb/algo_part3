@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 
 #define ROWS 6
 #define COLS 3
 
 int main(void)
 {
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
+
     float A[ROWS][COLS];
     float sum_pos = 0.0f;
     int count_pos = 0;
