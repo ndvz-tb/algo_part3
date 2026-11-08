@@ -8,7 +8,7 @@ using namespace std;
 
 #define MAX_LEN 256
 
-// Прототипи функцій обробки рядка згідно з варіантом 17 (Розділ 10, п. 10.3–10.4)
+// Прототипи функцій обробки рядка (Варіант 17)
 int getStringLength(const char *s);
 int countWords(const char *s);
 int countDoubleSpaces(const char *s);
@@ -19,19 +19,14 @@ int main()
     SetConsoleOutputCP(65001);
     SetConsoleCP(65001);
 
-    // Статичний масив для зберігання рядка (п. 10.4 методичних вказівок)
+    // Статичний масив для зберігання рядка
     char str[MAX_LEN];
     int choice;
 
-    cout << "=== Лабораторна робота №6 (Розділ 10: Комп'ютерний практикум 9) ===" << endl;
-    cout << "Тема: Рядки. Варіант 17" << endl << endl;
-
-    cout << "Введіть рядок символів:" << endl << "> ";
+    cout << "Введіть рядок: ";
     cin.getline(str, MAX_LEN);
 
-    cout << "\nВведений рядок: \"" << str << "\"" << endl;
-
-    // Меню вибору дії у циклі do-while з оператором switch
+    // Меню вибору дії у циклі do-while
     do {
         showMenu();
         cout << "Ваш вибір: ";
@@ -41,33 +36,23 @@ int main()
 
         switch (choice) {
             case 1:
-                cout << "-> (1) Довжина рядка (strlen): "
-                     << getStringLength(str) << " символів." << endl;
+                cout << "Довжина рядка: " << getStringLength(str) << endl;
                 break;
 
             case 2:
-                cout << "-> (2) Кількість слів у рядку: "
-                     << countWords(str) << endl;
+                cout << "Кількість слів: " << countWords(str) << endl;
                 break;
 
             case 3:
-                cout << "-> (3) Кількість подвійних пробілів у рядку: "
-                     << countDoubleSpaces(str) << endl;
-                break;
-
-            case 4:
-                cout << "-> Повний аналіз рядка:" << endl;
-                cout << "   (1) Довжина рядка:                " << getStringLength(str) << " символів" << endl;
-                cout << "   (2) Кількість слів:               " << countWords(str) << endl;
-                cout << "   (3) Кількість подвійних пробілів: " << countDoubleSpaces(str) << endl;
+                cout << "Кількість подвійних пробілів: " << countDoubleSpaces(str) << endl;
                 break;
 
             case 0:
-                cout << "Завершення роботи програми." << endl;
+                cout << "Вихід." << endl;
                 break;
 
             default:
-                cout << "Помилка: невідомий пункт меню! Спробуйте ще раз." << endl;
+                cout << "Невірний вибір!" << endl;
                 break;
         }
     } while (choice != 0);
@@ -75,25 +60,23 @@ int main()
     return 0;
 }
 
-// Виведення текстового меню користувача
+// Функція виведення меню
 void showMenu()
 {
-    cout << "\n---------------- МЕНЮ ОПЕРАЦІЙ ----------------" << endl;
-    cout << "1 - Визначити довжину рядка" << endl;
-    cout << "2 - Визначити кількість слів у рядку" << endl;
-    cout << "3 - Визначити кількість подвійних пробілів" << endl;
-    cout << "4 - Вивести всі три показники одночасно" << endl;
+    cout << "\nМеню:" << endl;
+    cout << "1 - Довжина рядка" << endl;
+    cout << "2 - Кількість слів" << endl;
+    cout << "3 - Кількість подвійних пробілів" << endl;
     cout << "0 - Вихід" << endl;
-    cout << "-----------------------------------------------" << endl;
 }
 
-// Функція (1): визначення довжини рядка за допомогою бібліотечної функції strlen()
+// (1) Визначення довжини рядка через бібліотечну функцію strlen()
 int getStringLength(const char *s)
 {
     return (int)strlen(s);
 }
 
-// Функція (2): підрахунок кількості слів у рядку з використанням isspace() з <cctype>
+// (2) Підрахунок кількості слів у рядку
 int countWords(const char *s)
 {
     int words = 0;
@@ -112,7 +95,7 @@ int countWords(const char *s)
     return words;
 }
 
-// Функція (3): підрахунок кількості подвійних пробілів ("  ") у рядку
+// (3) Підрахунок кількості подвійних пробілів у рядку
 int countDoubleSpaces(const char *s)
 {
     int count = 0;
