@@ -1,0 +1,8 @@
+[package]
+name = "lab9"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lab9"
+path = "lab9.rs"
